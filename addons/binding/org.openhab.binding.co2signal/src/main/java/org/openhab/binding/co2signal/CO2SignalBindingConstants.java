@@ -31,10 +31,9 @@ public class CO2SignalBindingConstants {
     public static final String COUNTRYCODE = "countryCode";
     public static final String CARBONINTENSITY = "carbonIntensity";
     public static final String FOSSILFUELPERCENTAGE = "fossilFuelPercentage";
-    public static final String DATETIME = "datetime";
 
     public static final Set<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = ImmutableSet.of(THING_TYPE_co2);
     public static final Set<String> SUPPORTED_CHANNEL_IDS = ImmutableSet.of(COUNTRYCODE, CARBONINTENSITY,
-            FOSSILFUELPERCENTAGE, DATETIME);
+            FOSSILFUELPERCENTAGE);
 
 }

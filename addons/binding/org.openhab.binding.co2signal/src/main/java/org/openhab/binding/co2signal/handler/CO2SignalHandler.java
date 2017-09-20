@@ -19,7 +19,6 @@ import javax.net.ssl.HttpsURLConnection;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.smarthome.core.library.types.DateTimeType;
 import org.eclipse.smarthome.core.library.types.DecimalType;
 import org.eclipse.smarthome.core.library.types.StringType;
 import org.eclipse.smarthome.core.thing.Channel;
@@ -165,8 +164,6 @@ public class CO2SignalHandler extends BaseThingHandler {
             State state = null;
             if (value == null) {
                 state = UnDefType.UNDEF;
-            } else if (value instanceof DateTimeType) {
-                state = (DateTimeType) value;
             } else if (value instanceof Double) {
                 state = new DecimalType((Double) value);
             } else if (value instanceof String) {
@@ -196,7 +193,7 @@ public class CO2SignalHandler extends BaseThingHandler {
     }
 
     /**
-     * Request new CO2 Signal data to the co2cn.org service
+     * Request new CO2 Signal data to the co2signal.com service
      *
      * @param location geo-coordinates from config
      * @param countryCode station ID from config
@@ -228,6 +225,7 @@ public class CO2SignalHandler extends BaseThingHandler {
             // Run the HTTP request and get the JSON response from co2cn.org
             URL url = new URL(urlStr);
             HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0");
             connection.setRequestProperty("auth-token", config.apikey);
 
             try {
@@ -288,8 +286,6 @@ public class CO2SignalHandler extends BaseThingHandler {
                 return data.getData().getCarbonIntensity();
             case CO2SignalBindingConstants.FOSSILFUELPERCENTAGE:
                 return data.getData().getFossilFuelPercentage();
-            case CO2SignalBindingConstants.DATETIME:
-                return new DateTimeType(data.getData().getDatetime());
         }
 
         return null;

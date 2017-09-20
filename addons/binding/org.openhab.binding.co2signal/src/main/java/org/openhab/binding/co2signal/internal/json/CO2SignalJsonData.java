@@ -17,7 +17,6 @@ package org.openhab.binding.co2signal.internal.json;
 public class CO2SignalJsonData {
 
     private double carbonIntensity;
-    private String datetime;
     private double fossilFuelPercentage;
 
     public CO2SignalJsonData() {
@@ -25,10 +24,6 @@ public class CO2SignalJsonData {
 
     public double getCarbonIntensity() {
         return carbonIntensity;
-    }
-
-    public String getDatetime() {
-        return datetime;
     }
 
     public double getFossilFuelPercentage() {

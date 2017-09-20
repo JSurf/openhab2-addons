@@ -15,7 +15,6 @@
             <channel id="countryCode" typeId="countryCode" />
 			<channel id="carbonIntensity" typeId="carbonIntensity" />
 			<channel id="fossilFuelPercentage" typeId="fossilFuelPercentage" />
-			<channel id="datetime" typeId="datetime" />
 		</channels>
 
 		<config-description>
@@ -63,14 +62,6 @@
 		<description>Fossil Fuel Percentage</description>
 		<category>Fossil Fuel Percentage</category>
 		<state readOnly="true" pattern="%.1f"></state>
-	</channel-type>
-
-	<channel-type id="datetime" advanced="true">
-		<item-type>DateTime</item-type>
-		<label>Observation time</label>
-		<description>Observation date and time</description>
-		<category>Observation time</category>
-		<state readOnly="true"></state>
 	</channel-type>
 
 </thing:thing-descriptions>
