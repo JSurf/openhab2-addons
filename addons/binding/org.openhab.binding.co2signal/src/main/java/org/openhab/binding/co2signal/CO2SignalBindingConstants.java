@@ -25,14 +25,14 @@ public class CO2SignalBindingConstants {
     public static final String BINDING_ID = "co2signal";
 
     // List of all Thing Type UIDs
-    public static final ThingTypeUID THING_TYPE_co2 = new ThingTypeUID(BINDING_ID, "co2signal");
+    public static final ThingTypeUID THING_TYPE_CO2 = new ThingTypeUID(BINDING_ID, "co2signal");
 
     // List of all Channel id's
     public static final String COUNTRYCODE = "countryCode";
     public static final String CARBONINTENSITY = "carbonIntensity";
     public static final String FOSSILFUELPERCENTAGE = "fossilFuelPercentage";
 
-    public static final Set<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = ImmutableSet.of(THING_TYPE_co2);
+    public static final Set<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = ImmutableSet.of(THING_TYPE_CO2);
     public static final Set<String> SUPPORTED_CHANNEL_IDS = ImmutableSet.of(COUNTRYCODE, CARBONINTENSITY,
             FOSSILFUELPERCENTAGE);
 

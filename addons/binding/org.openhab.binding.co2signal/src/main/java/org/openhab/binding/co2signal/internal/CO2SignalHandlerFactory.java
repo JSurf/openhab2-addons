@@ -8,7 +8,7 @@
  */
 package org.openhab.binding.co2signal.internal;
 
-import static org.openhab.binding.co2signal.CO2SignalBindingConstants.THING_TYPE_co2;
+import static org.openhab.binding.co2signal.CO2SignalBindingConstants.THING_TYPE_CO2;
 
 import java.util.Collections;
 import java.util.Set;
@@ -27,7 +27,7 @@ import org.openhab.binding.co2signal.handler.CO2SignalHandler;
  */
 public class CO2SignalHandlerFactory extends BaseThingHandlerFactory {
 
-    private static final Set<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = Collections.singleton(THING_TYPE_co2);
+    private static final Set<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = Collections.singleton(THING_TYPE_CO2);
 
     @Override
     public boolean supportsThingType(ThingTypeUID thingTypeUID) {
@@ -36,10 +36,9 @@ public class CO2SignalHandlerFactory extends BaseThingHandlerFactory {
 
     @Override
     protected ThingHandler createHandler(Thing thing) {
-
         ThingTypeUID thingTypeUID = thing.getThingTypeUID();
 
-        if (thingTypeUID.equals(THING_TYPE_co2)) {
+        if (thingTypeUID.equals(THING_TYPE_CO2)) {
             return new CO2SignalHandler(thing);
         }
 

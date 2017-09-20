@@ -206,8 +206,7 @@ public class CO2SignalHandler extends BaseThingHandler {
         String errorMsg = null;
 
         try {
-
-            // Build a valid URL for the co2cn.org service
+            // Build a valid URL for the co2signal.com service
             CO2SignalConfiguration config = getConfigAs(CO2SignalConfiguration.class);
 
             String urlStr = URL;
@@ -249,7 +248,6 @@ public class CO2SignalHandler extends BaseThingHandler {
             if (!resultOk) {
                 logger.warn("Error in co2cn.org (CO2 Signal) response: {}", errorMsg);
             }
-
         } catch (MalformedURLException e) {
             errorMsg = e.getMessage();
             logger.warn("Constructed url is not valid: {}", errorMsg);
