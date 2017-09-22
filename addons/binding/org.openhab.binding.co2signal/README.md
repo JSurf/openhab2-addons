@@ -97,7 +97,7 @@ sitemap co2signal label="CO2 Signal" {
 co2signal.rules:
 
 ```
-rule "Switch off device  CO2 Signal"
+rule "Switch Item on CO2 threshold"
 when
     Item co2_CarbonIntensity changed
 then
