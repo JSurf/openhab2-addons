@@ -32,10 +32,10 @@
 				<label>Country Code</label>
 				<description>two-letter iso country code, retrieves the last known state of a country, if you are too lazy to use a geo coordinate</description>
 			</parameter>
-			<parameter name="refresh" type="integer" min="30" required="false">
+			<parameter name="refresh" type="integer" min="1" required="false">
 				<label>Refresh interval</label>
 				<description>Specifies the refresh interval in minutes.</description>
-				<default>60</default>
+				<default>10</default>
 			</parameter>
 		</config-description>
 	</thing-type>
