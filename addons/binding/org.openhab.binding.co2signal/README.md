@@ -10,9 +10,11 @@ The project is providing informantion on how clean the current electricity is pr
 
 To use this binding, you first need to [register and get your API token](https://www.co2signal.com/).
 
+Credits go to the authors of the airquality binding, most code was copied from there.
+
 ## Supported Things
 
-There is exactly one supported thing type, which represents the CO2 Signal information for an observation location. It has the `co2` id. Of course, you can add multiple Things, e.g. for measuring co2 for different locations.
+There is exactly one supported thing type, which represents the CO2 Signal information for an observation location. It has the `co2signal` id. Of course, you can add multiple Things, e.g. for measuring co2 for different locations.
 
 ## Discovery
 
@@ -63,9 +65,9 @@ The CO2 information that is retrieved is available as these channels:
 co2signal.things:
 
 ```
-co2signal:co2:home "CO2Signal" @ "Krakow" [ apikey="XXXXXXXXXXXX", location="50.06465,19.94498", refresh=60 ]
-co2signal:co2:warsaw "CO2Signal in Warsaw" [ apikey="XXXXXXXXXXXX", location="52.22,21.01", refresh=60 ]
-co2signal:co2:germany "CO2Signal in Germany" [ apikey="XXXXXXXXXXXX", countryCode=de ]
+co2signal:co2signal:home "CO2Signal" @ "Krakow" [ apikey="XXXXXXXXXXXX", location="50.06465,19.94498", refresh=60 ]
+co2signal:co2signal:warsaw "CO2Signal in Warsaw" [ apikey="XXXXXXXXXXXX", location="52.22,21.01", refresh=60 ]
+co2signal:co2signal:germany "CO2Signal in Germany" [ apikey="XXXXXXXXXXXX", countryCode="de" ]
 ```
 
 co2signal.items:
@@ -74,9 +76,9 @@ co2signal.items:
 Group CO2Signal <energy>
 
 Switch  co2_LowCO2Intensity "Low CO2 Level"
-String   co2_CountryCode           "CO2 Signal Country Code" <energy> (CO2Signal) { channel="co2signal:co2:home:countryCode" }
-Number   co2_CarbonIntensity           "CO2 Signal Carbon Intensity <energy> (CO2Signal) { channel="co2signal:co2:home:carbonIntensity" }
-Number   co2_FossilFuelPercentage      "CO2 Signal Fossil Fuel Percentage <energy> (CO2Signal) { channel="co2signal:co2:home:fossilFuelPercentage" }
+String   co2_CountryCode           "CO2 Signal Country Code" <energy> (CO2Signal) { channel="co2signal:co2signal:home:countryCode" }
+Number   co2_CarbonIntensity           "CO2 Signal Carbon Intensity" <energy> (CO2Signal) { channel="co2signal:co2signal:home:carbonIntensity" }
+Number   co2_FossilFuelPercentage      "CO2 Signal Fossil Fuel Percentage" <energy> (CO2Signal) { channel="co2signal:co2signal:home:fossilFuelPercentage" }
 ```
 
 co2signal.sitemap:
