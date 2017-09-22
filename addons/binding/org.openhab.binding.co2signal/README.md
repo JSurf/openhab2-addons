@@ -77,7 +77,6 @@ Switch  co2_LowCO2Intensity "Low CO2 Level"
 String   co2_CountryCode           "CO2 Signal Country Code" <energy> (CO2Signal) { channel="co2signal:co2:home:countryCode" }
 Number   co2_CarbonIntensity           "CO2 Signal Carbon Intensity <energy> (CO2Signal) { channel="co2signal:co2:home:carbonIntensity" }
 Number   co2_FossilFuelPercentage      "CO2 Signal Fossil Fuel Percentage <energy> (CO2Signal) { channel="co2signal:co2:home:fossilFuelPercentage" }
-
 ```
 
 co2signal.sitemap:
@@ -91,7 +90,6 @@ sitemap co2signal label="CO2 Signal" {
         Text item=co2_LowCO2Intensity
     }
 }
-
 ```
 
 co2signal.rules:
